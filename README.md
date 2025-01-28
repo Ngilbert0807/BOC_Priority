@@ -15,7 +15,8 @@ In order to run the script
 - Ask a BOC E-Board member for the service_account_json file and also put it in the folder (NOTE: this json file contrains sensitive information do NOT make it public)
 - In your command prompt ener cd then the path to that folder
 - open up the py file and at the bottom of the notebook there are variables email_add_list and email_sub_list
-- Copy and paste the club members bmails you had to reject into the email_add_list. Make sure they are comma seperated and contained in brackets!!
+- Copy and paste the club members bmails you had to reject into the email_add_list. Make sure they are comma seperated, each email individually is in quotation marks, and the entire list is contained in brackets, you might need to remove the name for some members if you're copy and pasting directly from gmail.
 - Do the same thing to email_sub_list to any members that utilized their priority on a trip to subtract 1 from their priority level
+- Save the file then in your command prompt type python priority.py
 - You cannot subtract priority from a member that has never had any and hasn't been added to the sheet, you will receive a value error
 - 
