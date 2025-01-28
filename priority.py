@@ -54,7 +54,7 @@ email_sub_list=[]
 email_sub_list=[element.lower() for element in email_sub_list]
 
 if __name__ == "__main__":
-    counter = AutoPriorityTable('Priority Test')
+    counter = AutoPriorityTable('Automated Priority List')
     counter.increase_priority(email_add_list)
     counter.decrease_priority(email_sub_list)
     counter.sort_sheet()
