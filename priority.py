@@ -49,7 +49,9 @@ class AutoPriorityTable:
 		
 		
 email_add_list=[]
+email_add_list=[element.lower() for element in email_add_list]
 email_sub_list=[]
+email_sub_list=[element.lower() for element in email_sub_list]
 
 if __name__ == "__main__":
     counter = AutoPriorityTable('Priority Test')
