@@ -4,7 +4,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 class AutoPriorityTable:
 	def __init__(self, sheet_name):
 		scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-		credentials = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/natha/OneDrive/Documents/Python Scripts/BOC_priority/service_account.json.json"", scope) 
+		credentials = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/natha/OneDrive/Documents/Python Scripts/BOC_priority/service_account.json.json", scope) 
   		#edit to the file path of your service_account_json, make sure to change all \ to /
 		client = gspread.authorize(credentials)
 		self.sheet = client.open(sheet_name).worksheet('Automated Priority List')
