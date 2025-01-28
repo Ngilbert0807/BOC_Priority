@@ -59,4 +59,3 @@ if __name__ == "__main__":
     counter.decrease_priority(email_sub_list)
     counter.sort_sheet()
 
-
