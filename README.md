@@ -9,7 +9,7 @@ In order to run the script
 - This will make Python accessible from anywhere in your command prompt
 - You can access your command prompt by typing cmd into windows search
 - In the command prompt enter pip3 install gspread oauth2client
-- Make sure that the sheet is shared with sheets-access@autoprioritytable-449217.iam.gserviceaccount.com
+- Make sure that the sheet is shared with the proper google cloud access email
 - Add the json file and py file to a folder
 - In your command prompt ener cd then the path to that folder
 - open up the py file and at the bottom of the notebook there are variables email_add_list and email_sub_list
