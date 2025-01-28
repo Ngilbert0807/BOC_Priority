@@ -36,7 +36,7 @@ class AutoPriorityTable:
 		bmail_idx = headers.index("bmail")
 		priority_idx = headers.index("Priority Level")
 		email_to_row_map = {row[bmail_idx]: i for i, row in enumerate(rows)}
-		for email in email_add_list:
+		for email in email_sub_list:
 			if email in email_to_row_map:
 				row_idx = email_to_row_map[email] + 2
 				current_priority = int(self.sheet.cell(row_idx, priority_idx + 1).value or 0)
