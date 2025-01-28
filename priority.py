@@ -4,9 +4,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 class AutoPriorityTable:
 	def __init__(self, sheet_name):
 		scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-		credentials = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/natha/OneDrive/Documents/Python Scripts/priority_test/service_account.json.json", scope)
+		credentials = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/natha/OneDrive/Documents/Python Scripts/BOC_priority/service_account.json.json"", scope)
 		client = gspread.authorize(credentials)
-		self.sheet = client.open(sheet_name).worksheet('Priority Test')
+		self.sheet = client.open(sheet_name).worksheet('Automated Priority List')
 	def increase_priority(self, email_add_list):
 		data = self.sheet.get_all_values()
 		headers = data[0] if data else []
@@ -47,8 +47,8 @@ class AutoPriorityTable:
 		
 		
 		
-email_add_list=["ngilbert@binghamton.edu", "dfried2@binghamton.edu"]
-email_sub_list=['rjacobs62@binghamton.edu']
+email_add_list=[]
+email_sub_list=[]
 
 if __name__ == "__main__":
     counter = AutoPriorityTable('Priority Test')
