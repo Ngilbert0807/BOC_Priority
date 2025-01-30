@@ -53,8 +53,7 @@ def add_quotes(email_list):
 
 email_add_string=''' '''
 
-email_sub_string
-
+email_sub_string= ''' '''
 
 
 formatted_add_list=add_qoutes(email_add_string)
