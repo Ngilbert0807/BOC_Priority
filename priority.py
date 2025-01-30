@@ -51,17 +51,18 @@ def add_quotes(email_list):
     emails = [email.strip() for email in email_string.replace("\n", ",").replace(";", ",").split(",") if email.strip()]
     return emails
 
-email_string=''' '''
+email_add_string=''' '''
 
-# uncomment whatever function you want to run, running all at the same time will cause you to add your list then subtract it right away
-# copy and paste your emails into email strings, if  you're adding priority uncomment the 2 email_add_list lines
-# if oyou're subtracting priority uncomment the 2 email_sub_list lines
+email_sub_string
 
-formatted_list=add_qoutes(email_string)
-#email_add_list=formatted_list
-#email_add_list=[element.lower() for element in email_add_list]
-#email_sub_list=formatted_list
-# email_sub_list=[element.lower() for element in email_sub_list]
+
+
+formatted_add_list=add_qoutes(email_add_string)
+email_add_list=formatted_add)list
+email_add_list=[element.lower() for element in email_add_list]
+formatted_sub_list=add_quotes(email_sub_string)
+email_sub_list=formatted_sub_list
+email_sub_list=[element.lower() for element in email_sub_list]
 
 if __name__ == "__main__":
     counter = AutoPriorityTable('Automated Priority List')
