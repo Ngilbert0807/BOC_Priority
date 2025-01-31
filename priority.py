@@ -47,17 +47,17 @@ class AutoPriorityTable:
 		self.sheet.sort((2, 'des'))
 		
 	
-def add_quotes(email_list):
+def add_quotes(email_string):
     emails = [email.strip() for email in email_string.replace("\n", ",").replace(";", ",").split(",") if email.strip()]
     return emails
 
-email_add_string=''' '''
+email_add_string=''''''
 
-email_sub_string= ''' '''
+email_sub_string= ''''''
 
 
-formatted_add_list=add_qoutes(email_add_string)
-email_add_list=formatted_add)list
+formatted_add_list=add_quotes(email_add_string)
+email_add_list=formatted_add_list
 email_add_list=[element.lower() for element in email_add_list]
 formatted_sub_list=add_quotes(email_sub_string)
 email_sub_list=formatted_sub_list
