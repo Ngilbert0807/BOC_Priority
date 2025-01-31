@@ -45,17 +45,39 @@ class AutoPriorityTable:
 				raise ValueError("Email not found in the sheet.")
 	def sort_sheet(self):
 		self.sheet.sort((2, 'des'))
+	def check(self, email_list):
+		data = self.sheet.get_all_values()
+		headers = data[0] if data else []
+		rows = data[1:] if len(data) > 1 else []
+		if "bmail" not in headers or "Priority Level" not in headers: 
+			raise ValueError("The sheet must have 'bmail' and 'Priority Level' columns.")
+		bmail_idx = headers.index("bmail")
+		priority_idx = headers.index("Priority Level")
+		email_to_priority = {row[bmail_idx]: int(row[priority_idx]) for row in rows if row[bmail_idx]}
+		for email in email_list:
+			if email in email_to_priority and email_to_priority[email] > 0:
+				print(f"{email}: {email_to_priority[email]}")
+				
+				
 		
-	
+		
+
+
+
 def add_quotes(email_string):
     emails = [email.strip() for email in email_string.replace("\n", ",").replace(";", ",").split(",") if email.strip()]
     return emails
+
+email_check_strings=''''''
 
 email_add_string=''''''
 
 email_sub_string= ''''''
 
 
+formatted_check_list=add_quotes(email_check_strings)
+email_check_list=formatted_check_list
+email_check_list=[element.lower() for element in email_check_list]
 formatted_add_list=add_quotes(email_add_string)
 email_add_list=formatted_add_list
 email_add_list=[element.lower() for element in email_add_list]
@@ -63,9 +85,14 @@ formatted_sub_list=add_quotes(email_sub_string)
 email_sub_list=formatted_sub_list
 email_sub_list=[element.lower() for element in email_sub_list]
 
-if __name__ == "__main__":
+def update_sheet():
     counter = AutoPriorityTable('Automated Priority List')
     counter.increase_priority(email_add_list)
     counter.decrease_priority(email_sub_list)
     counter.sort_sheet()
-
+def check_sheet():
+    counter = AutoPriorityTable('Automated Priority List')
+    counter.check(email_check_list)
+# uncomment whatever function you want to run
+#update_sheet()
+# check_sheet()
